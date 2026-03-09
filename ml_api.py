@@ -126,7 +126,8 @@ if __name__ == '__main__':
     print("\n🏍  BikeValue ML API running at http://localhost/bikevalue/")
     print("   POST /predict  — get price prediction")
     print("   GET  /health   — check model status\n")
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
 
 
 
